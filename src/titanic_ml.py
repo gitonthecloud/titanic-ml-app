@@ -17,7 +17,10 @@ class ML:
   def run(self):
     self.df = self.tm.load_data('titanic_train.csv')
 
-    title = html.H1('A machine model for predicting Titanic survival')
+    title = html.H1('A machine model for predicting Titanic survival',
+                    style={
+                      'text-align': 'center'
+                    })
     bg_text = html.H2('Background')
 
     background_text = '''
@@ -27,7 +30,11 @@ class ML:
     used to build a machine model that predicts the chance of survival.'
     '''
     bg_text_md = dcc.Markdown(background_text)
-    hdr = html.Div([html.Br(), title, bg_text_md, html.Br(), html.Br()],
+    copyright = html.Div('@ 2025 - Swee Hing Lee',
+                         style={'font-size': 'xsmall',
+                                'color': 'black',
+                                'text-align': 'center'})
+    hdr = html.Div([html.Br(), title, bg_text_md, html.Br(), html.Br(), copyright],
                    style={
                      'background-color': 'skyblue',
                      'border-radius': '10px',
