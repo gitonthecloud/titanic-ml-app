@@ -1,7 +1,7 @@
 import pandas as pd
 from dash import html, dcc
 from dash import dash_table as dt
-from titanic_model import TitanicModel
+from src.titanic_model import TitanicModel
 
 
 class ML:
@@ -23,15 +23,15 @@ class ML:
     background_text = '''
     The Titanic was the largest and most luxurious ocean liner that operated in the
     1900 era. It struck an iceberg during its maiden voyage on 15 April 1912 and sunk.
-    Statistics of the disaster were collected into the Titanic data set which we will
-    use to build a machine model that predicts the chance of survival.'
+    Statistics of the disaster were collected into the Titanic data set which will be
+    used to build a machine model that predicts the chance of survival.'
     '''
     bg_text_md = dcc.Markdown(background_text)
     hdr = html.Div([html.Br(), title, bg_text_md, html.Br(), html.Br()],
                    style={
                      'background-color': 'skyblue',
-                     'border-radius': '30px',
-                     'padding': '10px'
+                     'border-radius': '10px',
+                     'padding': '20px'
                    })
 
     eda_hdr = html.H2('Exploratory Data Analysis')

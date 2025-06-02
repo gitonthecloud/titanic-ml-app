@@ -12,9 +12,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, classification_report
 
-from common import base_path
-
-
 class TitanicModel:
   def __init__(self):
     self.df = None
@@ -278,7 +275,8 @@ class TitanicModel:
     ms = ax.matshow(Z=crm)
     plt.colorbar(ms)
 
-    plt.savefig('../assets/titanic_cr.png')
+    file = Path(__file__).parent/'../assets/titanic_cr.png'
+    plt.savefig(file)
 
 
   def new_passenger(self):
